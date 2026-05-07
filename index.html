@@ -796,9 +796,8 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════════
-     REFERENCES
-════════════════════════════════════════════════════════════════════ -->
+<!-- Replace your current final REFERENCES section with this fixed version -->
+
 <section class="references">
   <h2>Data Sources</h2>
   <p>
@@ -806,6 +805,7 @@
     (Hagstofa Íslands), the Housing and Construction Authority (HMS), and
     short-term rental market data.
   </p>
+
   <ul>
     <li><strong>House prices and income:</strong> Statistics Iceland — Residential property price index (VIS01106), Income by sex and age (TEK01001), Consumer price index (VIS01005)</li>
     <li><strong>Population:</strong> Statistics Iceland — Average population by sex and age 1841–2025 (MAN08000)</li>
@@ -816,41 +816,41 @@
     <li><strong>Housing market indicators:</strong> Housing and Construction Authority Iceland — Monthly report, August 2025</li>
     <li><strong>Short-term rental data:</strong> Airbnb Iceland listings snapshot, 2025</li>
   </ul>
-  <p style="margin-top: 2rem;">
-    The full data cleaning, merging, and analysis is documented in our
+
+  <div style="
+    margin-top: 56px;
+    padding: 42px 36px;
+    background: white;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(140, 10, 24, 0.06), 0 1px 4px rgba(140, 10, 24, 0.04);
+  ">
+    <p style="
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 28px;
+    ">
+      Want to explore the full analysis, data cleaning process,
+      and methodology behind this project?
+    </p>
+
     <a href="https://github.com/Tanjaa21/s252892.github.io/blob/main/notebook/explainer_notebook_Final.ipynb"
-       target="_blank" rel="noopener"
-       style="color: var(--crimson); text-decoration: underline; font-weight: 600;">
-       explainer notebook
+       target="_blank"
+       rel="noopener"
+       style="
+         display: inline-block;
+         padding: 15px 34px;
+         border-radius: 999px;
+         background: linear-gradient(90deg, var(--coral), var(--crimson));
+         color: white;
+         text-decoration: none;
+         font-size: 0.9rem;
+         font-weight: 600;
+         letter-spacing: 0.08em;
+         text-transform: uppercase;
+       ">
+      View Notebook Here
     </a>
-    on GitHub.
-  </p>
+  </div>
 </section>
-
-<script>
-  // ── Progress bar ─────────────────────────────────────────────────
-  window.addEventListener('scroll', () => {
-    const el = document.documentElement;
-    const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
-    document.getElementById('progress').style.width = pct + '%';
-  });
-
-  // ── Intersection observer ─────────────────────────────────────────
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        // For viz-wraps, use the keyframe animation class
-        if (e.target.classList.contains('viz-wrap')) {
-          e.target.classList.add('visible');
-        }
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-  document.querySelectorAll(
-    '.reveal, .reveal-stagger, .viz-wrap, .caption, .pull-quote, .stat-item'
-  ).forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
