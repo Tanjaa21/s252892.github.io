@@ -496,41 +496,91 @@
       .chapter-number { font-size: 3rem; }
       .stat-strip { grid-template-columns: 1fr; }
     }
+   /* ── Notebook link section ───────────────────────────────────── */
+  .notebook-section {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 90px 24px 30px;
+  }
 
-    .notebook-section {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 90px 24px 20px;
-  text-align: center;
-}
+  .notebook-card {
+    background: white;
+    border-radius: 18px;
+    padding: 52px 36px;
+    text-align: center;
+    box-shadow:
+      0 4px 24px rgba(140, 10, 24, 0.06),
+      0 1px 4px rgba(140, 10, 24, 0.04);
+    position: relative;
+    overflow: hidden;
+  }
 
-.notebook-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--ink);
-  margin-bottom: 20px;
-}
+  .notebook-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at top right,
+      rgba(200, 64, 48, 0.08),
+      transparent 42%
+    );
+    pointer-events: none;
+  }
 
-.notebook-section p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--muted);
-  max-width: 620px;
-  margin: 0 auto 30px;
-}
+  .notebook-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+  }
 
-.notebook-section a {
-  display: inline-block;
-  padding: 15px 34px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--coral), var(--crimson));
-  color: white;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
+  .notebook-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--ink);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .notebook-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 30px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .notebook-card a {
+    display: inline-block;
+    padding: 15px 34px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--coral), var(--crimson));
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      opacity 0.25s ease;
+    } 
+
+    .notebook-card a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(140, 10, 24, 0.24);
+    opacity: 0.96;
+    }
+      
   </style>
 </head>
 
@@ -826,6 +876,28 @@
       Housing in Iceland has not just become more expensive — it has become
       harder to access.
     </span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     NOTEBOOK LINK
+════════════════════════════════════════════════════════════════════ -->
+<section class="notebook-section reveal">
+  <div class="notebook-card">
+    <p class="notebook-eyebrow">Full analysis</p>
+
+    <h2>View the Notebook</h2>
+
+    <p>
+      If you want to explore the full data cleaning process, methodology,
+      and analysis behind this project, you can view our notebook on GitHub.
+    </p>
+
+    <a href="https://github.com/Tanjaa21/s252892.github.io/blob/main/notebook/explainer_notebook_Final.ipynb"
+       target="_blank"
+       rel="noopener">
+      View Notebook Here
+    </a>
   </div>
 </section>
 
